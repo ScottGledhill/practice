@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
+import Clock from './Clock'
 
 class App extends Component {
-  function Clock(props) {
+  render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {props.date.toLocaleTimeString()}.</h2>
+        <Clock />
       </div>
     );
   }
-  
-  function tick() {
-    ReactDOM.render(
-      <Clock date={new Date()} />,
-      document.getElementById('root')
-    );
-  }
-  
-  setInterval(tick, 1000);
+}
   
 export default App;
