@@ -1,3 +1,10 @@
 .App {
-  text-align: center;
+
+}
+
+.time {
+  color: pink;
+  background-color: black;
+  font-size: 48px;
+  border-radius: 50%;
 }

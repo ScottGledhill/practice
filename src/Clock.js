@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 
 class Clock extends React.Component {
 	constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
+		super(props);
+		this.handleClick = this.handleClick.bind(this) 
+		this.state = {
+			date: new Date(),
+			timeShown: false
+		};
 	}
 	
 	componentDidMount() {
@@ -21,13 +25,25 @@ class Clock extends React.Component {
     this.setState({
       date: new Date()
     });
-  }
+	}
+	
+	handleClick() {
+		const currentState = this.state.timeShown;
+		this.setState({ timeShown: !currentState });
+		console.log(this.state.timeShown)
+	}
 
 
   render() {
     return (
       <div>
-				<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+				<button onClick={this.handleClick}> 
+					<div className="time"> Time </div>
+				</button>
+
+				<button> 
+					<div className="time"> {this.state.date.toLocaleTimeString()} </div>
+				</button>
       </div>
     );
   }
