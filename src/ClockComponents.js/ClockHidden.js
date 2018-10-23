@@ -1,8 +1,13 @@
+import React, { Component } from 'react';
+
 class ClockHidden extends Component {
-    state = {  }
-    render() { 
-        return (  );
-    }
+  render() { 
+    return (
+    <button> 
+      <div className="time"> {this.props.date.toLocaleTimeString()} </div>
+    </button>
+    )
+  }
 }
- 
+
 export default ClockHidden;
