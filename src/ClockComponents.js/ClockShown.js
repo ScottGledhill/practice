@@ -16,14 +16,19 @@ class ClockShown extends Component {
 		const timeShown = this.state.timeShown
 		if (timeShown) {
 			return (
-				<button onClick={this.handleClick}> 
-					<div className="time"> {this.props.date.toLocaleTimeString()} </div>
-				</button>
-			)} else {
-			return ( 
-				<button onClick={this.handleClick}>  
-					<div className="time"> Show Time </div>
-				</button>
+				<div className="time-container">
+					<button onClick={this.handleClick}> 
+						<div className="time"> {this.props.date.toLocaleTimeString()} </div>
+					</button>
+				</div>
+			)
+		} else {
+			return (
+				<div className="time-container">
+					<button onClick={this.handleClick}>  
+						<div className="time"> Show Time </div>
+					</button>
+				</div>
 			);	
 		}
 	}
