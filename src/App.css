@@ -1,10 +1,10 @@
-.App {
 
-}
 
 .time {
   color: pink;
   background-color: black;
   font-size: 48px;
-  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em
 }

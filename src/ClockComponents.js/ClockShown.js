@@ -10,7 +10,6 @@ class ClockShown extends Component {
 	handleClick() {
 		const currentState = this.state.timeShown;
 		this.setState({ timeShown: !currentState });
-		console.log(currentState)
 	}
 
 	render() { 
@@ -22,7 +21,7 @@ class ClockShown extends Component {
 				</button>
 			)} else {
 			return ( 
-				<button onClick={this.handleClick}> 
+				<button onClick={this.handleClick}>  
 					<div className="time"> Show Time </div>
 				</button>
 			);	
