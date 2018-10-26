@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ClockHidden from './ClockHidden';
 import ClockShown from './ClockShown'
 
 class Clock extends React.Component {
@@ -30,8 +29,7 @@ class Clock extends React.Component {
   render() {
     return (
 			<div>
-			<ClockShown/>
-			<ClockHidden date={this.state.date}/>
+			<ClockShown date={this.state.date}/>
       </div>
     );
   }
