@@ -6,6 +6,11 @@ class Counter extends Component {
     count: 0
   }
 
+  styles = {
+    fontSize: 50,
+    fontWeight: "bold"
+  }
+
   render() { 
     return ( 
       <div>
