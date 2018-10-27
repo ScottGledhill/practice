@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 
 class Counter extends Component {
-  constructor (props) {
-    super(props)
-}
 
   render() { 
     const { counter, onDelete, onIncrement} = this.props
@@ -25,10 +22,10 @@ class Counter extends Component {
   }
 
   formatCount() {
-    const { count } = this.props.counter;
-    return count === 0 ? "Zero" : count;
+    const count = this.props.counter;
+    return count.value === 0 ? "Zero" : count.value;
   }
 }
- 
+
 
 export default Counter;
