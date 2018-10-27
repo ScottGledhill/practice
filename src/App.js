@@ -41,9 +41,13 @@ handleIncrement = counter => {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar totalCounters={this.state.counters.length}/>
         <main classname="container">
-        <Counters counters={this.state.counters} onReset={this.handleReset} onIncrement={this.handleIncrement} onDelete={this.handleDelete} />
+        <Counters 
+          counters={this.state.counters} 
+          onReset={this.handleReset}
+          onIncrement={this.handleIncrement} 
+          onDelete={this.handleDelete} />
         <Clock />
         </main>
       </div>
