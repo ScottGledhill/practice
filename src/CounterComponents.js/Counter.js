@@ -20,7 +20,7 @@ class Counter extends Component {
     );
   }
   formatCount() {
-    const { count } = this.state;
+    const { count } = this.state; test
     return count === 0 ? "Zero" : count;
   }
 }
