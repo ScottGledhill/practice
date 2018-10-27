@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 class Counter extends Component {
   constructor (props) {
     super(props)
-}
+  }
 
   render() { 
     return ( 
