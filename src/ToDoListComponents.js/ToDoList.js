@@ -16,7 +16,9 @@ class ToDoList extends Component {
     return (
       <div>
         <ToDoForm onSubmit={this.addTodo}/>
-        {JSON.stringify(this.state.todos)}
+        {this.state.todos.map(todo => (
+          <div key={todo.id}>{todo.text}</div>
+        ))}
       </div>
     );
   }
