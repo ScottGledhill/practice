@@ -3,6 +3,7 @@ import './App.css';
 import Clock from './ClockComponents.js/Clock'
 import Counters from './CounterComponents.js/Counters'
 import NavBar from './NavbarComponents.js/Navbar';
+import ToDoList from './ToDoListComponents.js/ToDoList'
 
 class App extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ handleIncrement = counter => {
           onIncrement={this.handleIncrement} 
           onDelete={this.handleDelete} />
         <Clock />
+        <ToDoList />
         </main>
       </div>
     );
