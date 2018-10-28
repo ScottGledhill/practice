@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ToDo extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() { 
-    return ( 
-      <div 
-        onClick={props.toggleComplete}>
-        {props.text}
-      </div>
-    );
-  }
-}
- 
-export default ToDo;
+export default props => (
+  <div
+    style={{
+      textDecoration: props.todo.complete ? "line-through" : ""
+    }}
+    onClick={props.toggleComplete}>
+    {props.todo.text}
+  </div>
+);

@@ -14,7 +14,18 @@ class ToDoList extends Component {
   }
 
   toggleComplete = (id) => {
-    
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            complete: !todo.complete
+          }
+        } else {
+          return todo
+        }
+      })
+    })
   }
 
   render() { 
@@ -25,12 +36,15 @@ class ToDoList extends Component {
           <ToDo
             key={todo.id}
             togglecomplete={() => this.toggleComplete(todo.id)}
-            text={todo.text}
+            todo={todo}
           />
         ))}
+        <div>
+          todos left: {this.state.todos.filter(todo => !todo.complete).length}
+        </div>
       </div>
     );
   }
 }
- 
+
 export default ToDoList;
