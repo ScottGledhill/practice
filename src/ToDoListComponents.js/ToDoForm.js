@@ -32,6 +32,11 @@ class ToDoForm extends Component {
           onChange={this.handleChange}
           placeholder="todo...">
         </input>
+        <button
+          onClick={this.handleSubmit}
+          className="btn btn-success btn-sm m-2">
+          Add ToDo
+        </button>
       </form>
     );
   }

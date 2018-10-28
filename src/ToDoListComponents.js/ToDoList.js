@@ -13,8 +13,11 @@ class ToDoList extends Component {
   }
 
   render() { 
-    return ( 
-      <ToDoForm onSubmit={this.addTodo}/>
+    return (
+      <div>
+        <ToDoForm onSubmit={this.addTodo}/>
+        {JSON.stringify(this.state.todos)}
+      </div>
     );
   }
 }
