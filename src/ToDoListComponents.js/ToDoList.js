@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToDoForm from './ToDoForm.js';
+import ToDo from './ToDo.js';
 
 class ToDoList extends Component {
   state = { 
@@ -12,12 +13,20 @@ class ToDoList extends Component {
     })
   }
 
+  toggleComplete = (id) => {
+    
+  }
+
   render() { 
     return (
       <div>
         <ToDoForm onSubmit={this.addTodo}/>
         {this.state.todos.map(todo => (
-          <div key={todo.id}>{todo.text}</div>
+          <ToDo
+            key={todo.id}
+            togglecomplete={() => this.toggleComplete(todo.id)}
+            text={todo.text}
+          />
         ))}
       </div>
     );
