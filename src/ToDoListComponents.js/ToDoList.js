@@ -4,7 +4,8 @@ import ToDo from './ToDo.js';
 
 class ToDoList extends Component {
   state = { 
-    todos: []
+    todos: [],
+    todoToShow: 'all'
   } 
 
   addTodo = (todo) => {
@@ -29,6 +30,16 @@ class ToDoList extends Component {
   }
 
   render() { 
+    let todos = []
+
+    if (this.state.todoToShow === "all") {
+      todos = this.state.todos;
+    } else if (this.state.todoToShow === "active") {
+      todos = this.state.todos.filter(todo => !todo.complete);
+    } else if (this.state.todoToShow === "complete") {
+      todos = this.state.todos.filter(todo => todo.complete);
+    }
+
     return (
       <div>
         <ToDoForm onSubmit={this.addTodo}/>
@@ -42,6 +53,9 @@ class ToDoList extends Component {
         <div>
           todos left: {this.state.todos.filter(todo => !todo.complete).length}
         </div>
+          <button>All</button>
+          <button>Active</button>
+          <button>Complete</button>
       </div>
     );
   }
