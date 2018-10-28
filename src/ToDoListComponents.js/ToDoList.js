@@ -29,6 +29,12 @@ class ToDoList extends Component {
     })
   }
 
+  updateTodoToShow = (s) => {
+    this.setState({
+      todoToshow: s
+    })
+  }
+
   render() { 
     let todos = []
 
@@ -53,9 +59,9 @@ class ToDoList extends Component {
         <div>
           todos left: {this.state.todos.filter(todo => !todo.complete).length}
         </div>
-          <button>All</button>
-          <button>Active</button>
-          <button>Complete</button>
+          <button onClick={() => this.updateTodoToShow("all")}>All</button>
+          <button onClick={() => this.updateTodoToShow("active")}>Active</button>
+          <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
       </div>
     );
   }
