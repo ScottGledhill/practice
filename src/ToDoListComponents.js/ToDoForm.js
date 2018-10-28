@@ -5,9 +5,20 @@ class ToDoForm extends Component {
     text: ''
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render() { 
     return ( 
-      <input value={this.state.text} placeholder="todo..."></input>
+      <input
+        name="text"
+        value={this.state.text}
+        onChange={this.handleChange}
+        placeholder="todo...">
+      </input>
     );
   }
 }
