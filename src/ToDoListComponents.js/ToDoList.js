@@ -35,6 +35,16 @@ class ToDoList extends Component {
     })
   }
 
+  handleDelete = (id) => {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    })
+  }
+
+  removeComplete = (todo) => {
+    
+  }
+
   render() { 
     let todos = []
 
@@ -53,8 +63,8 @@ class ToDoList extends Component {
         <ToDo
           key={todo.id}
           toggleComplete={() => this.toggleComplete(todo.id)}
+          onDelete={() => this.handleDelete(todo.id)} 
           todo={todo}
-          onDelete={() => this.onDelete(todo.id)} 
         />
       ))}
       <div>
