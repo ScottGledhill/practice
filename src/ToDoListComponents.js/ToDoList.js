@@ -41,8 +41,10 @@ class ToDoList extends Component {
     })
   }
 
-  removeComplete = (todo) => {
-    
+  removeComplete = () => {
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.complete)
+    })
   }
 
   render() { 
@@ -70,9 +72,10 @@ class ToDoList extends Component {
       <div>
         todos left: {this.state.todos.filter(todo => !todo.complete).length}
       </div>
-        <button onClick={() => this.updateTodoToShow("all")}>All</button>
-        <button onClick={() => this.updateTodoToShow("active")}>Active</button>
-        <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+      <button onClick={() => this.updateTodoToShow("all")}>All</button>
+      <button onClick={() => this.updateTodoToShow("active")}>Active</button>
+      <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+      <button onClick={() => this.removeComplete()}>Remove Complete</button>
     </div>
   )}
 }
