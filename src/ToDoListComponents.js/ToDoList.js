@@ -15,8 +15,8 @@ class ToDoList extends Component {
   }
 
   toggleComplete = (id) => {
-    this.setState({
-      todos: this.state.todos.map(todo => {
+    this.setState(state => ({
+      todos: state.todos.map(todo => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -26,7 +26,7 @@ class ToDoList extends Component {
           return todo
         }
       })
-    })
+    }))
   }
 
   updateTodoToShow = (s) => {
@@ -36,15 +36,15 @@ class ToDoList extends Component {
   }
 
   handleDelete = (id) => {
-    this.setState({
-      todos: this.state.todos.filter(todo => todo.id !== id)
-    })
+    this.setState(state => ({
+      todos: state.todos.filter(todo => todo.id !== id)
+    }))
   }
 
   removeComplete = () => {
-    this.setState({
-      todos: this.state.todos.filter(todo => !todo.complete)
-    })
+    this.setState(state => ({
+      todos: state.todos.filter(todo => !todo.complete)
+    }))
   }
 
   render() { 
