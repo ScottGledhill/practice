@@ -49,10 +49,10 @@ class ToDoList extends Component {
     return (
       <div>
         <ToDoForm onSubmit={this.addTodo}/>
-        {this.state.todos.map(todo => (
+        {todos.map(todo => (
           <ToDo
             key={todo.id}
-            togglecomplete={() => this.toggleComplete(todo.id)}
+            toggleComplete={() => this.toggleComplete(todo.id)}
             todo={todo}
           />
         ))}

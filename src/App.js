@@ -43,7 +43,7 @@ handleIncrement = counter => {
     return (
       <div>
         <NavBar totalCounters={this.state.counters.length}/>
-        <main classname="container">
+        <main className="container">
         <Counters 
           counters={this.state.counters} 
           onReset={this.handleReset}

@@ -3,7 +3,7 @@ import shortid from 'shortid';
 
 class ToDoForm extends Component {
   state = { 
-    text: ''
+    text: ""
   }
 
   handleChange = (event) => {
@@ -17,8 +17,7 @@ class ToDoForm extends Component {
     this.props.onSubmit({
       id: shortid.generate(),
       text: this.state.text,
-      complete: false,
-
+      complete: false
     })
 
   }
