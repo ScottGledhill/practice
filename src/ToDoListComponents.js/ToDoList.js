@@ -75,7 +75,9 @@ class ToDoList extends Component {
       <button onClick={() => this.updateTodoToShow("all")}>All</button>
       <button onClick={() => this.updateTodoToShow("active")}>Active</button>
       <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+      {this.state.todos.some(todo => todo.complete) ?  ( 
       <button onClick={() => this.removeComplete()}>Remove Complete</button>
+      ) : null}
     </div>
   )}
 }
