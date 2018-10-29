@@ -19,8 +19,7 @@ class ToDoForm extends Component {
       text: this.state.text,
       complete: false
     })
-    this.setState({
-      text: ""})
+    this.setState({text: ""})
   }
 
   render() { 

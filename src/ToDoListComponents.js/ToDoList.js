@@ -30,8 +30,9 @@ class ToDoList extends Component {
   }
 
   updateTodoToShow = (s) => {
+    console.log(s)
     this.setState({
-      todoToshow: s
+      todoToShow: s
     })
   }
 
