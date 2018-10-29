@@ -30,7 +30,6 @@ class ToDoList extends Component {
   }
 
   updateTodoToShow = (s) => {
-    console.log(s)
     this.setState({
       todoToShow: s
     })
@@ -47,25 +46,25 @@ class ToDoList extends Component {
       todos = this.state.todos.filter(todo => todo.complete);
     }
 
-    return (
+  return (
+    <div>
+      <ToDoForm onSubmit={this.addTodo}/>
+      {todos.map(todo => (
+        <ToDo
+          key={todo.id}
+          toggleComplete={() => this.toggleComplete(todo.id)}
+          todo={todo}
+          onDelete={() => this.onDelete(todo.id)} 
+        />
+      ))}
       <div>
-        <ToDoForm onSubmit={this.addTodo}/>
-        {todos.map(todo => (
-          <ToDo
-            key={todo.id}
-            toggleComplete={() => this.toggleComplete(todo.id)}
-            todo={todo}
-          />
-        ))}
-        <div>
-          todos left: {this.state.todos.filter(todo => !todo.complete).length}
-        </div>
-          <button onClick={() => this.updateTodoToShow("all")}>All</button>
-          <button onClick={() => this.updateTodoToShow("active")}>Active</button>
-          <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+        todos left: {this.state.todos.filter(todo => !todo.complete).length}
       </div>
-    );
-  }
+        <button onClick={() => this.updateTodoToShow("all")}>All</button>
+        <button onClick={() => this.updateTodoToShow("active")}>Active</button>
+        <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+    </div>
+  )}
 }
 
 export default ToDoList;
